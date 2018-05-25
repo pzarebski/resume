@@ -3,31 +3,7 @@
         <div class="container">
             <h3 class="text-center">Contact Me</h3>
             <div class="col-lg-6 col-md-6 col-sm-6 comment-agile1" data-aos="flip-left">
-                <form action="#" method="post">
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <input type="text" class="form-control" id="name" placeholder="Full Name" required="">
-                            <p class="help-block"></p>
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <input type="email" class="form-control" id="email" placeholder="Email Address" required="">
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <input type="text" class="form-control" id="name1" placeholder="Phone Number" required="">
-                            <p class="help-block"></p>
-                        </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <textarea rows="10" cols="100" class="form-control" id="message" placeholder="Message" required=""></textarea>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                <commentsform />
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 comment-agile2" data-aos="flip-right">
                 <h4>Contact me for more details</h4>
@@ -43,3 +19,13 @@
         </div>
     </section>
 </template>
+
+<script>
+import commentsform from './comments.form.vue'
+
+export default {
+    components: {
+        commentsform
+    }
+}
+</script>
