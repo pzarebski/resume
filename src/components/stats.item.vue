@@ -9,12 +9,21 @@
 export default {
     props: {
         title: "",
-        index: 0
+        index: 0,
+        percent: 0,
+        color: "",
+        type: ""
     },
     computed: {
         getId: function () {
             return "gauge" + this.index;
+        },
+        getType: function() {
+            return this.type === undefined ? "halfcircle" : this.type;
         }
+    },
+    mounted: function () {
+        $("#" + this.getId).gauge(parseInt(this.percent), {color: this.color,unit: " %",type: this.getType});
     }
 }
 </script>
