@@ -5,66 +5,19 @@
 		<h3 class="text-center">My Projects</h3>
 		</div>	
 			<div class="gallery-info">
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p1.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p1img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p2.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p2img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p3.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p3img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p4.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p4img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p5.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p5img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p6.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p6img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p7.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p7img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p8.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p8img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p9.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p9img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p10.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p10img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p11.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p11img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
-				<div class="col-md-3 gallery-grids">
-					<a href="images/p12.jpg" class="gallery-box" data-lightbox="example-set" data-title="">
-						<img :src="p12img" alt="" class="img-responsive zoom-img">
-					</a>
-				</div>
+				<galleryitem :image="p1img" />
+				<galleryitem :image="p2img" />
+				<galleryitem :image="p3img" />
+				<galleryitem :image="p4img" />
+				<galleryitem :image="p5img" />
+				<galleryitem :image="p6img" />
+				<galleryitem :image="p7img" />
+				<galleryitem :image="p8img" />
+				<galleryitem :image="p9img" />
+				<galleryitem :image="p10img" />
+				<galleryitem :image="p11img" />
+				<galleryitem :image="p12img" />
+				
 				<div class="clearfix"> </div>	
 			</div>
 		</div>
@@ -84,24 +37,28 @@ import p9 from "./../assets/images/p9.jpg";
 import p10 from "./../assets/images/p10.jpg";
 import p11 from "./../assets/images/p11.jpg";
 import p12 from "./../assets/images/p12.jpg";
+import galleryitem from "./gallery.item.vue";
 
 export default {
-    data() {
-        return {
-            msg: "Welcome to Your Vue.js App",
-            p1img: p1,
-            p2img: p2,
-            p3img: p3,
-            p4img: p4,
-            p5img: p5,
-            p6img: p6,
-            p7img: p7,
-            p8img: p8,
-            p9img: p9,
-            p10img: p10,
-            p11img: p11,
-            p12img: p12
-        };
-    }
-}
+  data() {
+    return {
+      msg: "Welcome to Your Vue.js App",
+      p1img: p1,
+      p2img: p2,
+      p3img: p3,
+      p4img: p4,
+      p5img: p5,
+      p6img: p6,
+      p7img: p7,
+      p8img: p8,
+      p9img: p9,
+      p10img: p10,
+      p11img: p11,
+      p12img: p12
+    };
+  },
+  components: {
+    galleryitem
+  }
+};
 </script>
