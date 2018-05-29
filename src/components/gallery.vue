@@ -2,7 +2,7 @@
 	<div class="gallery" id="gallery">
 		<div class="container">
 		<div class="about-head text-center ">
-		<h3 class="text-center">My Projects</h3>
+		<h3 class="text-center">My Projects<a href="#gallery"></a></h3>
 		</div>	
 			<div class="gallery-info">
 				<galleryitem :image="p1img" />

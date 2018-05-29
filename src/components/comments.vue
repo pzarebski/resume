@@ -1,7 +1,7 @@
 <template>
     <section class="comment-w3l" id="contact">
         <div class="container">
-            <h3 class="text-center">Contact Me</h3>            
+            <h3 class="text-center">Contact Me <a href="#contact"></a></h3>
             <commentsform />
             <commentdetails />
             <div class="clearfix"></div>

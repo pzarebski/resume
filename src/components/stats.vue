@@ -1,7 +1,7 @@
 <template>
 	<div class="stats" id="stats">
 		<div class="container">
-		<h3 class="text-center">Stats</h3>
+		<h3 class="text-center">Stats<a href="#stats"></a></h3>
 			<div class="w3layouts_skills_grids">
 				<statsitem title="Projects Done" index="1" percent="90" color="#ff4f81" />
 				<statsitem title="Mobile Apps" index="2" percent="70" color="#2dde98"  />

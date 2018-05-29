@@ -1,5 +1,4 @@
 <template>
-    <!-- //Header -->
     <div class="container">
         <div class="flexslider-info">
             <section class="slider col-md-6">

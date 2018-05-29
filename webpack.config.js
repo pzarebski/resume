@@ -61,14 +61,14 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
         }
       },
       { 
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+        test: /\.(woff|woff2|eot|ttf|svg)$/, 
         loader: 'url-loader?limit=100000' 
       }
     ]

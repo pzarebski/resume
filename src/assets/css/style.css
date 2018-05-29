@@ -708,7 +708,7 @@ ul.address li ul.agileits-address-text li a {
 }
 .exp_grid1 span.fa {
     position: absolute;
-    left: -8.2%;
+    left: -49px;
     font-size: 20px;
     top: 0%;
 	color: #ff6c5f;
@@ -722,7 +722,7 @@ ul.address li ul.agileits-address-text li a {
 }
 .exp_grid1 h4 {
     color: #666;
-    font-size: 20px;
+    font-size: 17px;
     letter-spacing: 2px;
     font-weight: 400;
     text-transform: uppercase;

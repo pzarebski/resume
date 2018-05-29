@@ -1,5 +1,4 @@
 <template>
-    <!-- nav -->
     <div class="w3layouts-nav-right">
       <div class="fat-nav">
         <div class="fat-nav__wrapper">
@@ -15,6 +14,5 @@
           </ul>
         </div>
       </div>
-    </div>		
-	  <!-- //nav -->
+    </div>
 </template>

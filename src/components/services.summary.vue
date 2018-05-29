@@ -3,7 +3,7 @@
         <h4>{{title}}</h4>
         <p>{{description}}</p>
         <div class="more">
-            <a href="#">Know more</a>
+            <a href="#about">Know more</a>
         </div>
     </div>
 </template>

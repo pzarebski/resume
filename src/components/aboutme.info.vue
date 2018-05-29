@@ -15,7 +15,7 @@
             <aboutmeinfosocialitem href="mailto:pzarebski@gmail.com" title="e-mail" icon="envelope" />
             <aboutmeinfosocialitem href="//github.com/pzarebski" title="github" icon="github" />
             <aboutmeinfosocialitem href="//stackoverflow.com/users/1498401" title="stack-overflow" icon="stack-overflow" />
-            <aboutmeinfosocialitem href="//linkedin.com/in/pzarebski" title="linkedin" icon="linkedin" />            
+            <aboutmeinfosocialitem href="//linkedin.com/in/pzarebski" title="linkedin" icon="linkedin" />
           </ul>
         </div>
 	</div>

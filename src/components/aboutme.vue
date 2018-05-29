@@ -2,7 +2,7 @@
     <!-- About section -->
     <div class="about" id="about">
         <div class="container">
-            <h3 class="text-center">About Me</h3>
+            <h3 class="text-center">About Me<a href="#about"></a></h3>
             
             <aboutmeinfo />
             <aboutmesummary />
