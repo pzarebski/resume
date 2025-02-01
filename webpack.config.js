@@ -1,5 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
+const { VueLoaderPlugin } = require('vue-loader');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
@@ -10,49 +12,27 @@ module.exports = {
   },
   module: {
     rules: [
+      // ... your other loaders (css, sass, vue, js, file-loader, etc.)
       {
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
+        use: ['vue-style-loader', 'css-loader']
       },
       {
         test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
-        ],
+        use: ['vue-style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.sass$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader?indentedSyntax'
-        ],
+        use: ['vue-style-loader', 'css-loader', 'sass-loader?indentedSyntax']
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
           loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
-            'scss': [
-              'vue-style-loader',
-              'css-loader',
-              'sass-loader'
-            ],
-            'sass': [
-              'vue-style-loader',
-              'css-loader',
-              'sass-loader?indentedSyntax'
-            ]
+            'scss': ['vue-style-loader', 'css-loader', 'sass-loader'],
+            'sass': ['vue-style-loader', 'css-loader', 'sass-loader?indentedSyntax']
           }
-          // other vue-loader options go here
         }
       },
       {
@@ -69,40 +49,62 @@ module.exports = {
       },
       { 
         test: /\.(woff|woff2|eot|ttf|svg)$/, 
-        loader: 'url-loader?limit=100000' 
+        loader: 'url-loader',
+        options: {
+          limit: 100000
+        }
       }
     ]
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm-bundler.js'
     },
-    extensions: ['*', '.js', '.vue', '.json']
+    // List valid extensions; remove wildcard '*' if present.
+    extensions: ['.js', '.vue', '.json'],
+    fallback: {
+      // Provide polyfills for Node.js core modules.
+      stream: require.resolve('stream-browserify'),
+      buffer: require.resolve('buffer/')
+    }
   },
   devServer: {
+    static: {
+      directory: path.join(__dirname, 'public')
+    },
     historyApiFallback: true,
-    noInfo: true,
-    overlay: true
+    devMiddleware: {
+      stats: 'minimal'
+    },
+    client: {
+      overlay: true
+    }
   },
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
-}
+  devtool: 'eval-source-map',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'public/index.html', // optional: you can provide a custom template or omit it for a default index.
+      inject: true
+    }),
+    new VueLoaderPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jquery: 'jquery',
+      'window.jQuery': 'jquery',
+      jQuery: 'jquery'
+    })
+  ]
+};
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.devtool = 'source-map';
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
       }
     }),
     new webpack.LoaderOptionsPlugin({
@@ -114,14 +116,5 @@ if (process.env.NODE_ENV === 'production') {
       'window.jQuery': 'jquery',
       jQuery: 'jquery'
     })
-  ])
-} else {
-  module.exports.plugins = (module.exports.plugins || []).concat([    
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jquery: 'jquery',
-      'window.jQuery': 'jquery',
-      jQuery: 'jquery'
-    })
-  ])
+  ]);
 }

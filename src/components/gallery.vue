@@ -25,18 +25,18 @@
 </template>
 
 <script>
-import p1 from "./../assets/images/p1.jpg";
-import p2 from "./../assets/images/p2.jpg";
-import p3 from "./../assets/images/p3.jpg";
-import p4 from "./../assets/images/p4.jpg";
-import p5 from "./../assets/images/p5.jpg";
-import p6 from "./../assets/images/p6.jpg";
-import p7 from "./../assets/images/p7.jpg";
-import p8 from "./../assets/images/p8.jpg";
-import p9 from "./../assets/images/p9.jpg";
-import p10 from "./../assets/images/p10.jpg";
-import p11 from "./../assets/images/p11.jpg";
-import p12 from "./../assets/images/p12.jpg";
+import p1 from "./../../public//assets/images/p1.jpg";
+import p2 from "./../../public//assets/images/p2.jpg";
+import p3 from "./../../public//assets/images/p3.jpg";
+import p4 from "./../../public//assets/images/p4.jpg";
+import p5 from "./../../public//assets/images/p5.jpg";
+import p6 from "./../../public//assets/images/p6.jpg";
+import p7 from "./../../public//assets/images/p7.jpg";
+import p8 from "./../../public//assets/images/p8.jpg";
+import p9 from "./../../public//assets/images/p9.jpg";
+import p10 from "./../../public/assets/images/p10.jpg";
+import p11 from "./../../public/assets/images/p11.jpg";
+import p12 from "./../../public/assets/images/p12.jpg";
 import galleryitem from "./gallery.item.vue";
 
 export default {

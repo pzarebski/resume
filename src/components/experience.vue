@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import shindey from "./../assets/images/shindey.jpg";
+import shindey from "./../../public/assets/images/shindey.jpg";
 import experiencepositionitem from './experience.positionitem.vue'
 
 export default {

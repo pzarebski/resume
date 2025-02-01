@@ -1,6 +1,6 @@
 <template>
-    <h5 v-if="isEmail"><span :class="iconStyle"></span> {{text}}</h5>
-    <h5 v-else><span :class="iconStyle"></span> <a :href="mailHref">{{text}}</a></h5>
+    <h5 v-if="isEmail"><span :class="iconStyle"></span> <a :href="mailHref">{{text}}</a></h5>
+    <h5 v-else><span :class="iconStyle"></span> {{text}}</h5>
 </template>
 
 <script>

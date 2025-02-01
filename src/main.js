@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import jQuery from 'jquery'
 import popper from 'popper.js'
 import bootstrap from 'bootstrap'
@@ -7,9 +7,6 @@ import gauge from './utils/jquery.gauge'
 import fatnav from './utils/jquery.fatNav'
 import slider from './utils/jquery.flexslider'
 import smoothscroll from './utils/SmoothScroll.min.js'
-
-import './assets/css/bootstrap.min.css'
-import './assets/css/style.css'
 
 import App from './App.vue'
 import topnavbar from './components/topnavbar.vue'
@@ -25,21 +22,20 @@ import resumefooter from './components/footer.vue'
 
 window.jQuery = jQuery
 
-Vue.component('topnavbar', topnavbar);
-Vue.component('banner', banner);
-Vue.component('aboutme', aboutme);
-Vue.component('services', services);
-Vue.component('skills', skills);
-Vue.component('gallery', gallery);
-Vue.component('stats', stats);
-Vue.component('experience', experience);
-Vue.component('comments', comments);
-Vue.component('resumefooter', resumefooter);
+const app = createApp(App)
 
-new Vue({
-  el: '#app',
-  render: h => h(App)
-})
+app.component('topnavbar', topnavbar);
+app.component('banner', banner);
+app.component('aboutme', aboutme);
+app.component('services', services);
+app.component('skills', skills);
+app.component('gallery', gallery);
+app.component('stats', stats);
+app.component('experience', experience);
+app.component('comments', comments);
+app.component('resumefooter', resumefooter);
+
+app.mount('#app');
 
 $(document).ready(function (){
   $('.flexslider').flexslider({
